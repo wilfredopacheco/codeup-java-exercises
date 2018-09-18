@@ -28,22 +28,17 @@ public class ControlFlowExercises {
 //        65536
         long j = 2;
         do {
-
             System.out.println(j);
             j *= j;
-
         } while (j<1000000);
         System.out.println("\n");
 //        For
 //
 //        refactor the previous two exercises to use a for loop instead
-
         for (long r = 2; r < 1000000; r*=r) {
 
             System.out.println(r);
         }
-
-
 //        Fizzbuzz
 //
 //        One of the most common interview questions for entry-level programmers is the FizzBuzz test.
@@ -53,10 +48,8 @@ public class ControlFlowExercises {
 //        For multiples of three print “Fizz” instead of the number
 //        For the multiples of five print “Buzz”.
 //        For numbers which are multiples of both three and five print “FizzBuzz”.
-
         String fizz = "Fizz";
         String buzz = "Buzz";
-
         for (int k = 0; k <= 100; k++){
             if (k%15 == 0){
                 System.out.println(fizz + buzz);
@@ -90,22 +83,18 @@ public class ControlFlowExercises {
 //        4      | 16      | 64
 //        5      | 25      | 125
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Would you like to see the table of squares and cubes?");
         String answer = scanner.nextLine();
-
         if (answer.toLowerCase().contains("y")){
             System.out.println("What number would you like to go up to?");
             int input = scanner.nextInt();
             System.out.println("Here is your table!\n");
             System.out.println("number | squared | cubed");
-            System.out.println("------ | ------ | ------");
-            for (int n = 0; n < input; n++)
-                System.out.println(n + "      | " + (n*n) + "      | " + (n*n*n));
+            System.out.println("------ | ------- | ------");
+            for (int n = 0; n <= input; n++)
+                System.out.println(n + "      | " + (n*n) + "       | " + (n*n*n));
         }
-
 //        Convert given number grades into letter grades.
-//
 //                Prompt the user for a numerical grade from 0 to 100.
 //        Display the corresponding letter grade.
 //                Prompt the user to continue.
@@ -122,13 +111,25 @@ public class ControlFlowExercises {
 //
 //        Edit your grade ranges to include pluses and minuses (ex: 99-100 = A+).
 
+        System.out.println("Would you like to make to see your numerical grade as a letter grade?");
+        answer = scanner.nextLine();
 
+        if (answer.toLowerCase().contains("y")){
+            System.out.println("Please enter your numerical grade (0-100)");
+            int userGrade = scanner.nextInt();
 
-
-
-
-
-
+            if (userGrade > 87) {
+                System.out.println("You received an 'A'");
+            } else if (userGrade < 88 && userGrade > 79) {
+                System.out.println("You received a 'B'");
+            } else if (userGrade < 80 && userGrade > 66) {
+                System.out.println("You received a 'C'");
+            } else if (userGrade < 67 && userGrade > 59) {
+                System.out.println("You received a 'D'");
+            } else if (userGrade < 59){
+                System.out.println("You received an 'F'");
+            }
+        }
         System.exit(0);
     }
 }
