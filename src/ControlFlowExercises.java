@@ -112,9 +112,6 @@ public class ControlFlowExercises {
 //
 //        Edit your grade ranges to include pluses and minuses (ex: 99-100 = A+).
 
-
-
-
         System.out.println("Would you like to make to see your numerical grade as a letter grade?");
         answer = scanner.nextLine();
 
