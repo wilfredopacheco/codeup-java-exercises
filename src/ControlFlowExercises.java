@@ -86,7 +86,7 @@ public class ControlFlowExercises {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Would you like to see the table of squares and cubes?");
         String answer = scanner.nextLine();
-        if (answer.toLowerCase().contains("y")){
+        if (answer.toLowerCase().contains("y")) {
             System.out.println("What number would you like to go up to?");
             int input = scanner.nextInt();
             System.out.println("Here is your table!\n");
@@ -116,39 +116,41 @@ public class ControlFlowExercises {
 //        Bonus
 //
 //        Edit your grade ranges to include pluses and minuses (ex: 99-100 = A+).
+        Scanner secondscanner = new Scanner(System.in);
 
         System.out.println("Would you like to make to see your numerical grade as a letter grade?");
-        answer = scanner.nextLine();
-
-        if (answer.toLowerCase().contains("y")) {
+        String newAnswer = secondscanner.nextLine(); //catches the space allowing user to proceed to next question
+//        answer = scanner.nextLine();
+//System.out.println("answer" + answer);
+        if (newAnswer.toLowerCase().contains("y")) {
             System.out.println("Please enter your numerical grade (0-100)");
             int userGrade = scanner.nextInt();
+            String bonus = Plus(Integer.toString(userGrade));
             if (userGrade > 87) {
-                System.out.format("You received an 'A%s'", Plus(userGrade));
+                System.out.format("You received an 'A%s'", bonus);
             } else if (userGrade < 88 && userGrade > 79) {
-                System.out.format("You received a 'B%s'", Plus(userGrade));
+                System.out.format("You received a 'B%s'", bonus);
             } else if (userGrade < 80 && userGrade > 66) {
-                System.out.format("You received a 'C%s'", Plus(userGrade));
+                System.out.format("You received a 'C%s'", bonus);
             } else if (userGrade < 67 && userGrade > 59) {
-                System.out.format("You received a 'D%s'", Plus(userGrade));
+                System.out.format("You received a 'D%s'", bonus);
             } else if (userGrade < 59){
-                System.out.format("You received an 'F%s'", Plus(userGrade));
+                System.out.format("You received an 'F%s'", bonus);
             }
         }
         System.exit(0);
     }
-    private static String Plus(int num){
+    private static String Plus(String num){
         String plus = "+";
-        String minus = "-" ;
-        String result;
+//        String minus = "-";
+        String result= "-";
         // converts integer to string allowing us to evaluate the second character
-        String n = Integer.toString(num);
-        if (num == 0) {
+        char n = num.charAt(1);
+//        System.out.println(n);
+        if (Integer.parseInt(num) == 0) {
             result = "";
-        } else if (n.charAt(1) >= 5) {
-           result = plus;
-        } else {
-            result = minus;
+        } else if (Character.getNumericValue(n) > 4) {
+            result = plus;
         }
         return result;
     }
