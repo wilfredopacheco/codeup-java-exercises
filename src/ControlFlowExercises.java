@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class ControlFlowExercises {
 
     public static void main (String [] args) {
@@ -111,25 +112,42 @@ public class ControlFlowExercises {
 //
 //        Edit your grade ranges to include pluses and minuses (ex: 99-100 = A+).
 
+
+
+
         System.out.println("Would you like to make to see your numerical grade as a letter grade?");
         answer = scanner.nextLine();
 
-        if (answer.toLowerCase().contains("y")){
+        if (answer.toLowerCase().contains("y")) {
             System.out.println("Please enter your numerical grade (0-100)");
             int userGrade = scanner.nextInt();
-
             if (userGrade > 87) {
-                System.out.println("You received an 'A'");
+                System.out.format("You received an 'A%s'", Plus(userGrade));
             } else if (userGrade < 88 && userGrade > 79) {
-                System.out.println("You received a 'B'");
+                System.out.format("You received a 'B%s'", Plus(userGrade));
             } else if (userGrade < 80 && userGrade > 66) {
-                System.out.println("You received a 'C'");
+                System.out.format("You received a 'C%s'", Plus(userGrade));
             } else if (userGrade < 67 && userGrade > 59) {
-                System.out.println("You received a 'D'");
+                System.out.format("You received a 'D%s'", Plus(userGrade));
             } else if (userGrade < 59){
-                System.out.println("You received an 'F'");
+                System.out.format("You received an 'F%s'", Plus(userGrade));
             }
         }
         System.exit(0);
+    }
+    private static String Plus(int num){
+        String plus = "+";
+        String minus = "-" ;
+        String result;
+        // converts integer to string allowing us to evaluate the second character
+        String n = Integer.toString(num);
+        if (num == 0) {
+            result = "";
+        } else if (n.charAt(1) >= 5){
+           result = plus;
+        } else {
+            result = minus;
+        }
+        return result;
     }
 }
