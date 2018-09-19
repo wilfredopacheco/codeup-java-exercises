@@ -92,8 +92,13 @@ public class ControlFlowExercises {
             System.out.println("Here is your table!\n");
             System.out.println("number | squared | cubed");
             System.out.println("------ | ------- | ------");
-            for (int n = 0; n <= input; n++)
-                System.out.println(n + "      | " + (n*n) + "       | " + (n*n*n));
+            int n;
+            for ( n = 0; n <= input; n++)
+                if (n*n >= 10){
+                    System.out.println(n + "      | " + (n*n) + "      | " + (n*n*n));
+                } else {
+                    System.out.println(n + "      | " + (n*n) + "       | " + (n*n*n));
+                }
         }
 //        Convert given number grades into letter grades.
 //                Prompt the user for a numerical grade from 0 to 100.
@@ -140,7 +145,7 @@ public class ControlFlowExercises {
         String n = Integer.toString(num);
         if (num == 0) {
             result = "";
-        } else if (n.charAt(1) >= 5){
+        } else if (n.charAt(1) >= 5) {
            result = plus;
         } else {
             result = minus;
