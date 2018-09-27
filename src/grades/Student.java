@@ -29,14 +29,14 @@ public class Student {
         return average/grades.size();
     }
 
-    public static void main(String[] args) {
-        ArrayList <Integer> myGrades = new ArrayList<>();
-        myGrades.add(90);
-        myGrades.add(80);
-        myGrades.add(70);
-
-
-        Student student = new Student("Wilfredo",myGrades);
-        System.out.println(student.getName() + " has an average of " + student.getGradeAverage());
-    }
+//    public static void main(String[] args) {
+//        ArrayList <Integer> myGrades = new ArrayList<>();
+//        myGrades.add(90);
+//        myGrades.add(80);
+//        myGrades.add(70);
+//
+//
+//        Student student = new Student("Wilfredo",myGrades);
+//        System.out.println(student.getName() + " has an average of " + student.getGradeAverage());
+//    }
 }
