@@ -1,3 +1,34 @@
+
+/*
+my Input.class is overloaded and can receive a string and convert it to either an int or double.
+In doing so this example shows how my Input.class handles errors and works to solve the problem
+when the user enters a value that is not recognized.
+
+The following is used to import the Input.class:
+
+import util.Input;
+
+ -----------the following is a few examples step by step, how the class handles certain errors-----------
+
+
+Input input = new Input(); // This introduces an new instance of Input class
+        System.out.println("enter a number"); // asks the user for a number
+        String user = input.getString(); // gets the input as a string
+        // calls the getInt(passing a string) class from the user to display
+        System.out.println(input.getInt(user));
+        System.out.println("enter a number"); // asks user for another number
+        int user2; // sets user2 for the user input
+        try {
+        user2  = input.getInt(); // calls getInt() with nothing passing to it like above
+        System.out.println(user2); // prints the input
+        }
+        // catches the StackOverflowError received when passing anything other than an integer
+        catch (StackOverflowError e) {
+        // now calls the getInput(passing the input as a string) to loop as done in example above
+        user = input.getString();
+        System.out.println(input.getInt(user)); // prints number
+        }
+*/
 package util;
 
 import java.util.InputMismatchException;
