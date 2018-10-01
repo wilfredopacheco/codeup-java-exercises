@@ -11,7 +11,7 @@ import util.Input;
  -----------the following is a few examples step by step, how the class handles certain errors-----------
 
 
-Input input = new Input(); // This introduces an new instance of Input class
+        Input input = new Input(); // This introduces an new instance of Input class
         System.out.println("enter a number"); // asks the user for a number
         String user = input.getString(); // gets the input as a string
         // calls the getInt(passing a string) class from the user to display
@@ -29,6 +29,7 @@ Input input = new Input(); // This introduces an new instance of Input class
         System.out.println(input.getInt(user)); // prints number
         }
 */
+
 package util;
 
 import java.util.InputMismatchException;
